@@ -106,6 +106,7 @@ namespace Nez
 
 		public override void OnEntityTransformChanged(Transform.Component comp)
 		{
+		    _areBoundsDirty = true;
 			// we only deal with positional changes here. TiledMaps cant be scaled.
 			if (_shouldCreateColliders && comp == Transform.Component.Position)
 			{
